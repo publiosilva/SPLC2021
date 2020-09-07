@@ -1,0 +1,38 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Wed, Feb 18, 2015 - 10:43 PM  -->
+<feature_model name="Text_Editor">
+<meta>
+<data name="description">Feature model of a configurable text editor</data>
+<data name="creator">Krzysztof Czarnecki</data>
+<data name="address">200 University Ave. West, Waterloo, ON, Canada</data>
+<data name="email">kczarnec at swen dot uwaterloo dot ca</data>
+<data name="phone">+1-519-888-4567</data>
+<data name="website">http://gsd.uwaterloo.ca/</data>
+<data name="organization">University of Waterloo</data>
+<data name="department">Generative Software Development Lab</data>
+<data name="date"></data>
+<data name="reference">Krzysztof Czarnecki, Simon Helsen, and Ulrich Eisenecker. Formalizing cardinality-based feature models and their specialization. Software Process Improvement and Practice, 10(1), 2005. Special issue on Software Variability: Process and Management. http://swen.uwaterloo.ca/~kczarnec/spip05a.pdf</data>
+</meta>
+<feature_tree>
+:r editor_config(_id_0)
+	:m backup(_id_1)
+		:o autosave(_id_2)
+			:m minutes(_id_3)
+		:o backup_onchange(_id_4)
+		:m backup_extension(_id_5)
+			:g (_id_6) [1,1] 
+				: file_bak(_id_7)
+				: file_bak_ext(_id_8)
+				: file_ext_bak(_id_9)
+	:o document_class(_id_10)
+		:m associated_file_ext(_id_11)
+			:o ext(_id_12)
+		:m commands(_id_13)
+			:o remove_blank_lines(_id_14)
+			:o spell_check(_id_15)
+			:o dos_unix_conversion(_id_16)
+		:o syntax_highlighting(_id_17)
+			:m syntax_definition_file(_id_18)
+</feature_tree>
+<constraints>
+</constraints>
+</feature_model>

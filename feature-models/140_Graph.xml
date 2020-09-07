@@ -1,0 +1,60 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Sun, Feb 22, 2015 - 6:46 PM  -->
+<feature_model name="Graph">
+<meta>
+<data name="description">Feature model of a graph editor</data>
+<data name="creator">Hong Mei</data>
+<data name="address"></data>
+<data name="email"></data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization"></data>
+<data name="department"></data>
+<data name="date"></data>
+<data name="reference">Hong Mei, Wei Zhang, and Fang Gu. A feature oriented approach to modeling and reusing requirements of software product lines. Computer Software and Applications Conference, 2003. COMPSAC 2003. Proceedings. 27th Annual International, pages 250?256, Nov. 2003</data>
+</meta>
+<feature_tree>
+:r graph(_id_0)
+	:m services(_id_1)
+		:m graph_manipulation(graph_manipulation)
+			:m delete(_id_2)
+			:m select(_id_3)
+				:m selection_mode(_id_4)
+					:g (_id_5) [1,1] 
+						: increment_selection(_id_6)
+						: non_increment_selection(_id_7)
+			:m add(_id_8)
+				:m entity_add(_id_9)
+				:m connector_add(_id_10)
+			:m move(_id_11)
+				:m moving_mode(_id_12)
+					:g (_id_13) [1,1] 
+						: outline_moving(_id_14)
+						: content_moving(_id_15)
+				:o moving_constraint(_id_16)
+					:g (_id_17) [1,1] 
+						: horizontal_constraint(_id_18)
+						: vertical_constraint(_id_19)
+			:o compose(compose)
+			:o layer_adjust(layer_adjust)
+				:m up_layer(_id_20)
+				:m down_layer(_id_21)
+		:o do_undo_redo(do_undo_redo)
+			:m select_do_undo_redo(_id_22)
+			:m add_do_undo_redo(_id_23)
+			:m delete _do_undo_redo(_id_24)
+			:m move_do_undo_redo(_id_25)
+			:o compose_do_undo_redo(compose_do_undo_redo)
+			:o layer_adjust_do_undo_redo(layer_adjust_do_undo_redo)
+		:o zoom_inout(zoom_inout)
+</feature_tree>
+<constraints>
+c3a:~layer_adjust or ~do_undo_redo or layer_adjust_do_undo_redo
+c2b:~compose_do_undo_redo or compose
+c2a:~compose or ~do_undo_redo or compose_do_undo_redo
+c3c:~layer_adjust_do_undo_redo or layer_adjust
+c3b:~layer_adjust_do_undo_redo or do_undo_redo
+c2c:~compose_do_undo_redo or do_undo_redo
+c1a:~do_undo_redo or graph_manipulation
+c1b:~zoom_inout or graph_manipulation
+</constraints>
+</feature_model>

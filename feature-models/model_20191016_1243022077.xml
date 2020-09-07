@@ -1,0 +1,127 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Fri, May 15, 2020 - 1:37 PM  -->
+<feature_model name="ProfileItems">
+<meta>
+<data name="description">Describe profile items</data>
+<data name="creator">Merve</data>
+<data name="address"></data>
+<data name="email">mervebuyukdalgic@hotmail.com</data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization">Ozyegin University</data>
+<data name="department"></data>
+<data name="date"></data>
+<data name="reference"></data>
+</meta>
+<feature_tree>
+:r TV(_r)
+	:o Connectivity(_r_1)
+		:o Portal(_r_1_16)
+		:g (_r_1_86) [1,*] 
+			: GracenoteSupport(_r_1_86_87)
+		:g (_r_1_72) [1,*] 
+			: HbbTV(_r_1_72_73)
+	:o Country(_r_2)
+		:g (_r_2_90) [1,1] 
+			: Austria(_r_2_90_91)
+			: Belgium(_r_2_90_139)
+			: CzechRepublic(_r_2_90_140)
+			: Denmark(_r_2_90_141)
+			: Finland(_r_2_90_142)
+			: France(_r_2_90_143)
+			: Germany(_r_2_90_144)
+			: Ireland(_r_2_90_145)
+			: Italy(_r_2_90_146)
+			: Netherlands(_r_2_90_147)
+			: Norway(_r_2_90_148)
+			: Sweden(_r_2_90_149)
+			: Turkey(_r_2_90_150)
+			: UnitedKingdom(_r_2_90_151)
+	:o Customer(_r_3)
+		:g (_r_3_118) [1,1] 
+			: Bush(_r_3_118_119)
+			: Finlux(_r_3_118_152)
+			: Hitachi(_r_3_118_153)
+			: JVC(_r_3_118_154)
+			: Panasonic(_r_3_118_155)
+			: Philips(_r_3_118_156)
+			: Phoenix(_r_3_118_157)
+			: SEG(_r_3_118_158)
+			: Telefunken(_r_3_118_159)
+			: Toshiba(_r_3_118_160)
+	:o FreeviewPlay(_r_6)
+		:g (_r_6_178) [1,*] 
+			: BBC(_r_6_178_179)
+			: FreeviewPlayEnabled(_r_6_178_76)
+	:o Language(_r_7)
+		:g (_r_7_163) [1,1] 
+			: Czech(_r_7_163_164)
+			: Danish(_r_7_163_165)
+			: Dutch(_r_7_163_166)
+			: English(_r_7_163_167)
+			: Finnish(_r_7_163_168)
+			: French(_r_7_163_169)
+			: German(_r_7_163_170)
+			: Italian(_r_7_163_171)
+			: Norwegian(_r_7_163_172)
+			: Swedish(_r_7_163_173)
+			: Turkish(_r_7_163_174)
+	:o PVR(_r_8)
+		:g (_r_8_181) [1,*] 
+			: BackgroundPVR(_r_8_181_182)
+			: CopyNever(_r_8_181_183)
+			: RetentionLimit(_r_8_181_184)
+	:o SatelliteSupport(_r_9)
+		:g (_r_9_185) [1,*] 
+			: AstraHDPlus(_r_9_185_186)
+			: DSmart(_r_9_185_187)
+			: Fransat(_r_9_185_188)
+			: ORF(_r_9_185_189)
+			: Tivibu(_r_9_185_190)
+			: Tivusat(_r_9_185_191)
+			: Turksat(_r_9_185_192)
+	:o OAD(_r_10)
+		:g (_r_10_193) [1,*] 
+			: ManualOAD(_r_10_193_194)
+			: StandbyOAD(_r_10_193_195)
+	:o PatentItems(_r_11)
+		:g (_r_11_196) [1,*] 
+			: AutoZoomMode(_r_11_196_197)
+			: DVBSubtitles(_r_11_196_198)
+			: DVBT2(_r_11_196_199)
+			: TextTransparency(_r_11_196_200)
+	:o ChannelList(_r_13)
+		:g (_r_13_201) [1,*] 
+			: DeleteAndMoveUpSupport(_r_13_201_202)
+			: HDFilter(_r_13_201_203)
+	:o DefaultStandbySearch(_r_77)
+	:o DynamicChannelUpdate(_r_78)
+	:o CableOperatorSupport(_r_72)
+		:g (_r_72_73) [1,*] 
+			: Telenet(_r_72_73_74)
+			: VOO(_r_72_73_75)
+			: Unitymedia(_r_72_73_76)
+			: Ziggo-UPC(_r_72_73_77)
+			: Stofa(_r_72_73_78)
+			: Yousee(_r_72_73_79)
+</feature_tree>
+<constraints>
+constraint_30:_r_2_90_150 or _r_7_163_174 or _r_9_185_190 or _r_13 or _r_78
+constraint_31:_r_2_90_150 or _r_7_163_174 or _r_9_185_192 or _r_13 or _r_78
+constraint_18:_r_2_90_144 or _r_7_163_170 or _r_8 or _r_13 or _r_78 or _r_72_73_76
+constraint_28:_r_2_90_149 or _r_7_163_173 or _r_8 or _r_10 or _r_11 or _r_13 or _r_77
+constraint_29:_r_2_90_150 or _r_7_163_174 or _r_9_185_187 or _r_13 or _r_78
+constraint_8:_r_2_90_91 or _r_7_163_170 or _r_9_185_189 or _r_78
+constraint_22:_r_1 or _r_2_90_146 or _r_7_163_171 or _r_8 or _r_9_185_191 or _r_13 or _r_77
+constraint_10:_r_2_90_140 or _r_7_163_164 or _r_78
+constraint_23:_r_2_90_147 or _r_7_163_166 or _r_13 or _r_78 or _r_72_73_77
+constraint_12:_r_1 or _r_2_90_142 or _r_7_163_168 or _r_8 or _r_11 or _r_13 or _r_77
+constraint_21:_r_2_90_145 or _r_7_163_167 or _r_10 or _r_11 or _r_13 or _r_77
+constraint_13:_r_1 or _r_2_90_143 or _r_7_163_169 or _r_8 or _r_9_185_188 or _r_78
+constraint_26:_r_2_90_141 or _r_7_163_165 or _r_78 or _r_72_73_79
+constraint_27:_r_2_90_148 or _r_7_163_172 or _r_8 or _r_10 or _r_11 or _r_13 or _r_77
+constraint_24:_r_1 or _r_2_90_151 or _r_6 or _r_7_163_167 or _r_10 or _r_11_196_198 or _r_11_196_199 or _r_77
+constraint_15:_r_1 or _r_2_90_144 or _r_7_163_170 or _r_9_185_186 or _r_78
+constraint_25:_r_2_90_141 or _r_7_163_165 or _r_78 or _r_72_73_78
+constraint_16:_r_2_90_139 or _r_7_163_169 or _r_8 or _r_11 or _r_78
+</constraints>
+</feature_model>

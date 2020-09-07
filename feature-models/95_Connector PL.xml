@@ -1,0 +1,46 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Thu, Feb 19, 2015 - 1:22 PM  -->
+<feature_model name="Connector PL">
+<meta>
+<data name="description">A feature model of a simple stack data structure</data>
+<data name="creator">Markus Voelter</data>
+<data name="address"></data>
+<data name="email"></data>
+<data name="phone"></data>
+<data name="website">http://www.itemis.com/</data>
+<data name="organization">itemis AG, Germany</data>
+<data name="department"></data>
+<data name="date">Aug 2009</data>
+<data name="reference">Markus Voelter, Using Domain-Specific Languages for Product Line Engineering, Tutorial at SPLC 2009, San Francisco, USA</data>
+</meta>
+<feature_tree>
+:r Connector(_id_0)
+	:m Paradigm(_id_1)
+		:g (_id_2) [1,1] 
+			: Client/Server(_id_3)
+				:g (_id_4) [1,1] 
+					: Synchronous(_id_5)
+						:o Timeout(_id_6)
+					: Asynchronous(_id_7)
+						:g (_id_8) [1,1] 
+							: Polling(_id_9)
+								:g (_id_10) [1,1] 
+									: Blocking(_id_11)
+									: Non-blocking(_id_12)
+							: Callback(_id_13)
+			: Message-Based(_id_14)
+				:m Sender(_id_15)
+				:m Receiver(_id_16)
+					:g (_id_17) [1,1] 
+						: Pull(_id_18)
+							:g (_id_19) [1,*] 
+								: Queued(_id_20)
+								: Non-Queued(_id_21)
+						: Push(_id_22)
+	:m Technology(_id_23)
+		:g (_id_24) [1,1] 
+			: CAN(_id_25)
+			: Local(_id_26)
+</feature_tree>
+<constraints>
+</constraints>
+</feature_model>

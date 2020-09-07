@@ -1,0 +1,80 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Sun, Feb 22, 2015 - 10:33 PM  -->
+<feature_model name="Documentation_Generation">
+<meta>
+<data name="description">Feature model for DocGen, a commercial documentation generator for software systems</data>
+<data name="creator">Arie van Deursen</data>
+<data name="address"></data>
+<data name="email"></data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization"></data>
+<data name="department"></data>
+<data name="date"></data>
+<data name="reference">Arie van Deursen and Paul Klint. Domain-specific language design requires feature descriptions. Journal of Computing and Information Technology, 10(1):1?17, 2002</data>
+</meta>
+<feature_tree>
+:r doc_gen(_id_0)
+	:m analysis(_id_1)
+		:m language_analysis(_id_2)
+			:g (_id_3) [1,*] 
+				: cobol(cobol)
+					:g (_id_4) [1,1] 
+						: ibm_cobol(_id_5)
+						: microfocus_cobol(_id_6)
+				: jcl(jcl)
+				: sql(_id_7)
+				: delphi(_id_8)
+				: progress(_id_9)
+		:o version_mngt(version_mngt)
+		:o subsystems(subsystems)
+	:m presentation(_id_10)
+		:m localization(_id_11)
+			:g (_id_12) [1,*] 
+				: english(_id_13)
+				: dutch(_id_14)
+		:m interaction(_id_15)
+			:g (_id_16) [1,1] 
+				: static(static)
+				: dynamic(_id_17)
+		:m main_pages(_id_18)
+			:g (_id_19) [1,*] 
+				: program_page(_id_20)
+					:g (_id_21) [1,*] 
+						: annotation_section(annotation_section)
+						: activation_section(_id_22)
+						: entities_section(_id_23)
+						: parameters_section(_id_24)
+				: copybook_page(_id_25)
+				: statistics_page(_id_26)
+					:g (_id_27) [1,1] 
+						: with_history(_id_28)
+						: without_history(_id_29)
+				: indexes(_id_30)
+				: search_page(search_page)
+				: subsystem_page(subsystem_page)
+				: source_page(_id_31)
+				: source_difference(source_difference)
+		:o visualizations(_id_32)
+			:g (_id_33) [1,*] 
+				: perform_graph(perform_graph)
+				: conditional_perform_graph(conditional_perform_graph)
+				: jcl_graph(jcl_graph)
+				: subsystem_graph(subsystem_graph)
+				: overview_graph(_id_34)
+	:m database(_id_35)
+		:g (_id_36) [1,1] 
+			: db2(_id_37)
+			: oracle(_id_38)
+			: mysql(_id_39)
+</feature_tree>
+<constraints>
+c1:~subsystem_page or subsystems
+c2:~subsystem_graph or subsystems
+c6:~jcl_graph or jcl
+c5:~conditional_perform_graph or cobol
+c4:~perform_graph or cobol
+c3:~source_difference or version_mngt
+c8:~static or ~search_page
+c7:~static or ~annotation_section
+</constraints>
+</feature_model>
