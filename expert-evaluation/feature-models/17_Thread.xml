@@ -1,0 +1,70 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Sun, Feb 22, 2015 - 10:35 PM  -->
+<feature_model name="Thread">
+<meta>
+<data name="description">Feature model of the thread domain product line</data>
+<data name="creator">Danilo Beuche</data>
+<data name="address"></data>
+<data name="email"></data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization"></data>
+<data name="department"></data>
+<data name="date"></data>
+<data name="reference">Danilo Beuche. Composition and Construction of Embedded Software Families. PhD thesis, Otto-von-Guericke-Universitet Magdeburg, Germany, December 2003.</data>
+</meta>
+<feature_tree>
+:r thread(_id_0)
+	:m thread_instance(_id_1)
+		:g (_id_2) [1,1] 
+			: multiple(_id_3)
+				:o coroutine(_id_4)
+					:o dispatching(_id_5)
+						:m dispach_method(_id_6)
+							:m global_life(_id_7)
+						:o scheduling(_id_8)
+							:o bundle_schedule(_id_9)
+								:o bundle_preemption(_id_10)
+								:m bundle_strategy(_id_11)
+									:o bundle_strategy_replugging(_id_12)
+									:g (_id_13) [1,1] 
+										: bundle_fcfs(_id_14)
+										: bundle_lcfs(_id_15)
+							:o idle_control(_id_16)
+								:g (_id_17) [1,1] 
+									: idle_guard(_id_18)
+									: idle_panic(_id_19)
+									: idle_user(_id_20)
+							:o query_schedule(_id_21)
+							:m thread_schedule(_id_22)
+								:o thread_preemption(_id_23)
+									:o non_preemptable_threads(_id_24)
+									:o scheduler_lockable(_id_25)
+								:m thread_strategy(_id_26)
+									:g (_id_27) [1,1] 
+										: priority(_id_28)
+											:o schedule_same_priority(_id_29)
+											:m priority_behaviour(_id_30)
+												:g (_id_31) [1,1] 
+													: priority_cooperative(_id_32)
+													: priority_preemptive(_id_33)
+											:m priority_count(_id_34)
+												:g (_id_35) [1,1] 
+													: priority_16(_id_36)
+													: priority_32(_id_37)
+													: priority_8(_id_38)
+										: thread_fcfs(_id_39)
+										: thread_lcfs(_id_40)
+									:o thread_strategy_replugging(_id_41)
+					:m location(_id_42)
+						:g (_id_43) [1,1] 
+							: integrated(_id_44)
+							: separated(_id_45)
+					:m size(_id_46)
+						:o float_set(_id_47)
+						:o volatile_set(_id_48)
+						:m minimal_set(_id_49)
+			: single(_id_50)
+</feature_tree>
+<constraints>
+</constraints>
+</feature_model>

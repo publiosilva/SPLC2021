@@ -1,0 +1,123 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Sun, Feb 22, 2015 - 11:46 PM  -->
+<feature_model name="Arcade Game PL Feature Model">
+<meta>
+<data name="description">Arcade Game PL feature model</data>
+<data name="creator">Edson Oliveira Junior</data>
+<data name="address"></data>
+<data name="email"></data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization">Universidade de Sao Paulo (USP) and University of Waterloo</data>
+<data name="department"></data>
+<data name="date">Aug 2009</data>
+<data name="reference"></data>
+</meta>
+<feature_tree>
+:r Arcade Game(_id_0)
+	:m Use Cases(_id_1)
+		:o Check Previous Best Score(check_previous_best_score)
+		:o Save Score(save_score)
+		:m Save Game(_id_2)
+		:m Exit Game(_id_3)
+		:m Install Game(_id_4)
+		:m Uninstall Game(_id_5)
+		:m List Game(_id_6)
+		:m Play Game(_id_7)
+			:g (_id_8) [1,*] 
+				: Play Brickles(play_brickles)
+				: Play Pong(play_pong)
+				: Play Bowling(play_bowling)
+			:m Initialization(_id_9)
+				:m Animation Loop(_id_10)
+	:m Class Diagram(_id_11)
+		:m Game Sprite(game_sprite)
+			:o Sprite Pair(sprite_pair)
+			:m Rectangle(_id_12)
+				:m Size(_id_13)
+				:m Point(_id_14)
+			:g (_id_15) [1,*] 
+				: Movable Sprite(_id_16)
+					:m Velocity(_id_17)
+					:g (_id_18) [1,*] 
+						: Paddle(_id_19)
+							:g (_id_20) [1,*] 
+								: Top Paddle(top_paddle_pong)
+								: Bottom Paddle(bottom_paddle_pong)
+						: Puck(puck_core_assets)
+						: Bowling Ball(ball_bowling)
+						: Bowling Pin(pin_bowling)
+				: Stationary Sprite(_id_21)
+					:o Wall(_id_22)
+						:g (_id_23) [1,*] 
+							: Left pong(left_wall_pong)
+							: Right pont(right_wall_pong)
+							: Left brickles(left_brickles)
+							: Right brickles(right_brickles)
+					:g (_id_24) [1,*] 
+						: Brick(brick_brickles)
+						: Brick Pile(brick_pile_brickles)
+						: Ceiling brickles(ceiling_brickles)
+						: Floor brickles(floor_brickles)
+						: Lane(lane_bowling)
+						: Gutter(gutter_bowling)
+						: Edge(edge_bowling)
+						: End of Alley(alley_bowling)
+						: Rack of Pins(rack_pins_bowling)
+						: Score Board(score_board_pong)
+						: Floor pong(floor_pong)
+						: Ceiling pong(ceiling_pong)
+						: Dividing Line(dividing_line_pong)
+		:o Puck supply(puck_supply_brickles)
+		:m Board(_id_25)
+			:g (_id_26) [1,*] 
+				: Pong Board(board_pong)
+				: Brickles Board(board_brickles)
+				: Bowling Board(board_bowling)
+		:m Menu(_id_27)
+			:g (_id_28) [1,*] 
+				: Pong(menu_pong)
+				: Brickles(menu_brickles)
+				: Bowling(menu_bowling)
+		:m Game Menu(_id_29)
+			:g (_id_30) [1,*] 
+				: Pong Game Menu(pong_game_menu)
+				: Brickles Game Menu(brickles_game_menu)
+				: Bowling Game Menu(bowling_game_menu)
+</feature_tree>
+<constraints>
+c32:~brick_brickles or menu_brickles
+c33:~ceiling_brickles or menu_brickles
+c30:~right_brickles or menu_brickles
+c31:~brick_pile_brickles or menu_brickles
+c34:~floor_brickles or menu_brickles
+c35:~puck_supply_brickles or menu_brickles
+c29:~left_brickles or menu_brickles
+c28:~board_brickles or menu_brickles
+c27:~brickles_game_menu or menu_brickles
+c22:~gutter_bowling or menu_bowling
+c21:~lane_bowling or menu_bowling
+c20:~pin_bowling or menu_bowling
+c26:~bowling_game_menu or menu_bowling
+c25:~rack_pins_bowling or menu_bowling
+c24:~alley_bowling or menu_bowling
+c23:~edge_bowling or menu_bowling
+c6:play_bowling or ~menu_bowling
+c5:~play_bowling or menu_bowling
+c4:play_pong or ~menu_pong
+c3:~play_pong or menu_pong
+c9:~bottom_paddle_pong or menu_pong
+c8:~top_paddle_pong or menu_pong
+c17:~pong_game_menu or menu_pong
+c16:~board_pong or menu_pong
+c19:~ball_bowling or menu_bowling
+c18:~board_bowling or menu_bowling
+c1:~play_brickles or menu_brickles
+c2:play_brickles or ~menu_brickles
+c11:~right_wall_pong or menu_pong
+c10:~left_wall_pong or menu_pong
+c13:~floor_pong or menu_pong
+c12:~score_board_pong or menu_pong
+c15:~dividing_line_pong or menu_pong
+c14:~ceiling_pong or menu_pong
+</constraints>
+</feature_model>
