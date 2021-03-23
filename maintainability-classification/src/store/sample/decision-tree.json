@@ -1,0 +1,211 @@
+{
+  "rule": { "feature": "DTMax", "comparator": "<=", "threshold": 3.5 },
+  "left": {
+    "rule": { "feature": "NLeaf", "comparator": "<=", "threshold": 19.5 },
+    "left": {
+      "rule": { "feature": "CogC", "comparator": "<=", "threshold": 5.5 },
+      "left": {
+        "rule": null,
+        "left": null,
+        "right": null,
+        "label": "verygood"
+      },
+      "right": {
+        "rule": { "feature": "CogC", "comparator": "<=", "threshold": 6.5 },
+        "left": { "rule": null, "left": null, "right": null, "label": "good" },
+        "right": {
+          "rule": null,
+          "left": null,
+          "right": null,
+          "label": "verygood"
+        },
+        "label": null
+      },
+      "label": null
+    },
+    "right": {
+      "rule": { "feature": "NLeaf", "comparator": "<=", "threshold": 29.5 },
+      "left": {
+        "rule": { "feature": "NF", "comparator": "<=", "threshold": 30.0 },
+        "left": {
+          "rule": { "feature": "NF", "comparator": "<=", "threshold": 27.5 },
+          "left": {
+            "rule": null,
+            "left": null,
+            "right": null,
+            "label": "good"
+          },
+          "right": {
+            "rule": null,
+            "left": null,
+            "right": null,
+            "label": "bad"
+          },
+          "label": null
+        },
+        "right": {
+          "rule": null,
+          "left": null,
+          "right": null,
+          "label": "moderate"
+        },
+        "label": null
+      },
+      "right": {
+        "rule": { "feature": "NTop", "comparator": "<=", "threshold": 2.5 },
+        "left": {
+          "rule": null,
+          "left": null,
+          "right": null,
+          "label": "verygood"
+        },
+        "right": {
+          "rule": { "feature": "NM", "comparator": "<=", "threshold": 8.0 },
+          "left": { "rule": null, "left": null, "right": null, "label": "bad" },
+          "right": {
+            "rule": null,
+            "left": null,
+            "right": null,
+            "label": "verybad"
+          },
+          "label": null
+        },
+        "label": null
+      },
+      "label": null
+    },
+    "label": null
+  },
+  "right": {
+    "rule": { "feature": "NF", "comparator": "<=", "threshold": 32.5 },
+    "left": {
+      "rule": { "feature": "NF", "comparator": "<=", "threshold": 21.5 },
+      "left": {
+        "rule": { "feature": "FoC", "comparator": "<=", "threshold": 0.27 },
+        "left": {
+          "rule": { "feature": "NTop", "comparator": "<=", "threshold": 2.5 },
+          "left": {
+            "rule": null,
+            "left": null,
+            "right": null,
+            "label": "good"
+          },
+          "right": {
+            "rule": null,
+            "left": null,
+            "right": null,
+            "label": "good"
+          },
+          "label": null
+        },
+        "right": {
+          "rule": { "feature": "NTop", "comparator": "<=", "threshold": 3.5 },
+          "left": {
+            "rule": null,
+            "left": null,
+            "right": null,
+            "label": "verygood"
+          },
+          "right": {
+            "rule": null,
+            "left": null,
+            "right": null,
+            "label": "good"
+          },
+          "label": null
+        },
+        "label": null
+      },
+      "right": {
+        "rule": { "feature": "FoC", "comparator": "<=", "threshold": 0.4 },
+        "left": {
+          "rule": { "feature": "DTMax", "comparator": "<=", "threshold": 6.5 },
+          "left": {
+            "rule": null,
+            "left": null,
+            "right": null,
+            "label": "moderate"
+          },
+          "right": {
+            "rule": null,
+            "left": null,
+            "right": null,
+            "label": "good"
+          },
+          "label": null
+        },
+        "right": {
+          "rule": { "feature": "RDen", "comparator": "<=", "threshold": 0.5 },
+          "left": {
+            "rule": null,
+            "left": null,
+            "right": null,
+            "label": "verygood"
+          },
+          "right": {
+            "rule": null,
+            "left": null,
+            "right": null,
+            "label": "moderate"
+          },
+          "label": null
+        },
+        "label": null
+      },
+      "label": null
+    },
+    "right": {
+      "rule": { "feature": "DTMax", "comparator": "<=", "threshold": 6.5 },
+      "left": {
+        "rule": { "feature": "FoC", "comparator": "<=", "threshold": 0.63 },
+        "left": {
+          "rule": { "feature": "NLeaf", "comparator": "<=", "threshold": 21.5 },
+          "left": {
+            "rule": null,
+            "left": null,
+            "right": null,
+            "label": "moderate"
+          },
+          "right": {
+            "rule": null,
+            "left": null,
+            "right": null,
+            "label": "bad"
+          },
+          "label": null
+        },
+        "right": {
+          "rule": null,
+          "left": null,
+          "right": null,
+          "label": "verygood"
+        },
+        "label": null
+      },
+      "right": {
+        "rule": { "feature": "NM", "comparator": "<=", "threshold": 42.5 },
+        "left": {
+          "rule": { "feature": "SCDF", "comparator": "<=", "threshold": 0.5 },
+          "left": {
+            "rule": null,
+            "left": null,
+            "right": null,
+            "label": "verybad"
+          },
+          "right": {
+            "rule": null,
+            "left": null,
+            "right": null,
+            "label": "bad"
+          },
+          "label": null
+        },
+        "right": { "rule": null, "left": null, "right": null, "label": "bad" },
+        "label": null
+      },
+      "label": null
+    },
+    "label": null
+  },
+  "label": null
+}
