@@ -4,6 +4,16 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Index.vue') },
+      {
+        path: 'feature-models/:id',
+        name: 'feature-models',
+        component: () => import('pages/FeatureModels.vue'),
+      },
+      {
+        path: 'measures',
+        name: 'measures',
+        component: () => import('pages/Measures.vue'),
+      },
     ],
   },
 

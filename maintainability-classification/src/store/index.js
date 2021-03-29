@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import sample from './sample';
+import featureModel from './feature-model';
+import measure from './measure';
 
 // import example from './module-example'
 
@@ -19,6 +21,8 @@ export default () => {
   const Store = new Vuex.Store({
     modules: {
       sample,
+      featureModel,
+      measure,
     },
 
     // enable strict mode (adds overhead!)
