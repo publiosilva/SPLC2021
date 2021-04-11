@@ -2,6 +2,42 @@
   <q-page class="flex items-center">
     <div class="row full-width">
       <div class="col-8 offset-2">
+        <h5>How to use?</h5>
+        <ul>
+          <li>
+            Create a feature model in a modeling tool (we recommend the DyMMer
+            tool which is available at
+            https://github.com/DyMMerProject/DyMMerV2).
+          </li>
+
+          <li>
+            Calculate the values of the NF, NM, NTop, NLeaf, DTMax, CogC, FoC,
+            SCDF and RDen maintainability measures in a tool that supports the
+            calculation of these measures (the DyMMer tool supports the
+            calculation of the 9 maintenance measures).
+          </li>
+
+          <li>
+            Enter the model name and the measurement values in the order
+            described above in the text field below. Separate the values with a
+            comma. You can insert more than one model of features at a time,
+            just put one item per line.
+          </li>
+
+          <li>Click on the "Import" button.</li>
+
+          <li>
+            See the maintainability of the feature model in the
+            "Maintainability" column of the table below.
+          </li>
+
+          <li>
+            Click on the "Suggestions" button to view suggested changes to the
+            measurement values.
+          </li>
+        </ul>
+      </div>
+      <div class="col-8 offset-2">
         <div class="flex">
           <q-input
             v-model="text"
@@ -45,7 +81,8 @@
                       v-ripple
                     >
                       <q-item-section>
-                        Make {{
+                        Make
+                        {{
                           `${suggestion.feature} ${suggestion.comparator} ${suggestion.threshold}`
                         }}
                       </q-item-section>
@@ -53,12 +90,7 @@
                   </q-list>
                 </q-popup-proxy>
               </q-btn>
-              <q-btn
-                v-else
-                flat
-                disable
-                label="No Suggestions"
-              />
+              <q-btn v-else flat disable label="No Suggestions" />
             </q-td>
           </template>
         </q-table>
