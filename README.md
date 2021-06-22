@@ -3,7 +3,7 @@
 ## Datasets
 
 
-| Dataset          | Description                                                        | Size |
-|------------------|--------------------------------------------------------------------|------|
-| Original Dataset | This is the original (unclassified) dataset                        | 342  |
-| Dataset Oliveira | This is the original dataset classified with the Oliveira approach | 342  | 
+| Dataset | Description | Size |
+|---------|-------------|------|
+| Original Dataset | This is the original (unclassified) dataset. | 342 |
+| Dataset Oliveira | The Oliveira dataset contains the same feature models as the original dataset but classified using Oliveira's approach. We use this dataset in the training of machine learning algorithms. | 342 | 
