@@ -1,0 +1,16 @@
+Expert,Enter your experience with software product lines (in years): ,What is the context in which you deal with software product lines,What is the highest level of education you have completed?,Feature Model,Feature Model Maintainability,Have you ever assessed the maintainability of feature models?
+1,1 to 5 years,Academy,Master's degree,I have average knowledge and sometimes I use it,I have general knowledge but I almost never use it,Yes
+2,0 to 1 years,Academy,Master's degree,I have general knowledge but I almost never use it,I hear about it but I never use it,No
+3,5 to 10 years,Academy,Doctorate degree,I am an expert on the subject and I use it almost every day,I have general knowledge but I almost never use it,No
+4,1 to 5 years,Academy,Master's degree,I have general knowledge but I almost never use it,I hear about it but I never use it,No
+5,5 to 10 years,Both,Doctorate degree,I have average knowledge and sometimes I use it,I have general knowledge but I almost never use it,No
+6,1 to 5 years,Academy,Bachelor's degree,I have average knowledge and sometimes I use it,I have average knowledge and sometimes I use it,Yes
+7,1 to 5 years,Academy,Master's degree,I have average knowledge and sometimes I use it,I have average knowledge and sometimes I use it,No
+8,1 to 5 years,Academy,Bachelor's degree,I have average knowledge and sometimes I use it,I hear about it but I never use it,No
+9,5 to 10 years,Academy,Doctorate degree,I have average knowledge and sometimes I use it,I hear about it but I never use it,No
+10,1 to 5 years,Academy,Master's degree,I have average knowledge and sometimes I use it,I have general knowledge but I almost never use it,No
+11,1 to 5 years,Academy,Master's degree,I have average knowledge and sometimes I use it,I have average knowledge and sometimes I use it,Yes
+12,5 to 10 years,Academy,Doctorate degree,I have average knowledge and sometimes I use it,I have average knowledge and sometimes I use it,Yes
+13,More than 10 years,Academy,Doctorate degree,I am an expert on the subject and I use it almost every day,I have average knowledge and sometimes I use it,Yes
+14,5 to 10 years,Academy,Master's degree,I have average knowledge and sometimes I use it,I hear about it but I never use it,No
+15,1 to 5 years,Academy,Master's degree,I have average knowledge and sometimes I use it,I have general knowledge but I almost never use it,Yes

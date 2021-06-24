@@ -5,6 +5,7 @@ Software Product Lines (SPL) are generally specified using a Feature Model (FM),
 ## Maintainability Classification Tool
 
 In this work, we build a tool to assess the maintainability of a feature model and make it available at [https://publiosilva.github.io/tcc-2](https://publiosilva.github.io/tcc-2). We also make the tool's [source code](https://github.com/publiosilva/tcc-2/tree/master/maintainability-classification) available.
+
 ## Datasets
 
 
@@ -24,3 +25,8 @@ In this work, we build a tool to assess the maintainability of a feature model a
 | [Naive Bayes](https://github.com/publiosilva/tcc-2/blob/master/notebooks/Naive-Bayes.ipynb) | Procedures for training the Naive Bayes model are specified in this notebook. |
 | [Cross Validation](https://github.com/publiosilva/tcc-2/blob/master/notebooks/K-fold.ipynb) | In this notebook, a 5-step cross-validation is performed for the 3 machine learning models. |
 | [Independent Variables Selection](https://github.com/publiosilva/tcc-2/blob/master/notebooks/Feature-Selection.ipynb) | In this notebook, the procedures for selecting independent variables are specified. |
+
+## Expert Answers for Feature Model Assessment
+
+[Here](https://github.com/publiosilva/tcc-2/tree/master/expert-evaluation/answers) you can see expert answers for the feature model maintainability assessment.
+
