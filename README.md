@@ -4,7 +4,7 @@ Software Product Lines (SPL) are generally specified using a Feature Model (FM),
 
 ## Maintainability Classification Tool
 
-In this work, we build a tool to assess the maintainability of a feature model and make it available at [https://publiosilva.github.io/tcc-2](https://publiosilva.github.io/tcc-2). We also make the tool's [source code](https://github.com/publiosilva/tcc-2/tree/master/maintainability-classification) available.
+In this work, we build a tool to assess the maintainability of a feature model and make it available at [https://publiosilva.github.io/SPLC2021](https://publiosilva.github.io/SPLC2021/#/). We also make the tool's [source code](https://github.com/publiosilva/tcc-2/tree/master/maintainability-classification) available.
 
 ## Datasets
 
