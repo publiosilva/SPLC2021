@@ -38,21 +38,48 @@
         </ul>
       </div>
       <div class="col-8 offset-2">
-        <div class="flex">
-          <q-input
-            v-model="text"
-            filled
-            type="textarea"
-            label="Samples"
-            :placeholder="helperText"
-            class="full-width"
-          />
+        <div class="row">
+          <div class="col-4 q-pr-sm q-pb-sm">
+            <q-input outlined label="Feature Model Name" v-model="featureModelName"></q-input>
+          </div>
+          <div class="col-4 q-pr-sm q-pb-sm">
+            <q-input outlined label="NF" type="number" v-model.number="NF"></q-input>
+          </div>
+          <div class="col-4 q-pb-sm">
+            <q-input outlined label="NM" type="number" v-model.number="NM"></q-input>
+          </div>
+          <div class="col-4 q-pr-sm q-pb-sm">
+            <q-input outlined label="NTop" type="number" v-model.number="NTop"></q-input>
+          </div>
+          <div class="col-4 q-pr-sm q-pb-sm">
+            <q-input outlined label="NLeaf" type="number" v-model.number="NLeaf"></q-input>
+          </div>
+          <div class="col-4 q-pb-sm">
+            <q-input outlined label="DTMax" type="number" v-model.number="DTMax"></q-input>
+          </div>
+          <div class="col-4 q-pr-sm q-pb-sm">
+            <q-input outlined label="CogC" type="number" v-model.number="CogC"></q-input>
+          </div>
+          <div class="col-4 q-pr-sm q-pb-sm">
+            <q-input outlined label="FoC" type="number" v-model.number="FoC"></q-input>
+          </div>
+          <div class="col-4 q-pb-sm">
+            <q-input outlined label="SCDF" type="number" v-model.number="SCDF"></q-input>
+          </div>
+          <div class="col-4 q-pr-sm q-pb-sm">
+            <q-input outlined label="RDen" type="number" v-model.number="RDen"></q-input>
+          </div>
         </div>
-        <div class="flex justify-end full-width q-mt-sm">
+        <div class="flex justify-end full-width q-mt-md">
+          <q-btn
+            label="Clear"
+            class="q-mr-sm"
+            @click="doClear"
+          />
           <q-btn
             color="primary"
             label="Import"
-            :disable="!text"
+            :disable="formIsInvalid"
             @click="doImport"
           />
         </div>
@@ -95,6 +122,14 @@
           </template>
         </q-table>
       </div>
+      <div class="col-8 offset-2 q-mt-md flex justify-end">
+        <q-btn
+            color="primary"
+            label="Evaluate"
+            :disable="samples.length === 0"
+            @click="doEvaluate"
+          />
+      </div>
     </div>
   </q-page>
 </template>
@@ -107,7 +142,6 @@ export default {
 
   data() {
     return {
-      text: '',
       helperText:
         'Insert samples in the format: Feature Model Name,Number of Features (NF),Number of Mandatory Features (NM),Number of Top Features (NTop),Number of Leaf Features (NLeaf),Depth of Tree Max (DTMax), Cognitive Complexity (CogC),Flexibility of Configuration (FoC),Single Cylic Dependent Feature (SCDF),Density of the Dependency Graph (RDen)\n\nExample:\nFoo,10,2,3,5,3,4,0.53,0,0\nBar,20,12,8,7,6,9,0.74,1,2',
       columns: [
@@ -186,7 +220,7 @@ export default {
           required: true,
           label: 'Maintainability',
           align: 'center',
-          field: (row) => row.prediction.label,
+          field: (row) => (row.prediction ? row.prediction.label : 'UNKNOWN'),
           format: (val) => `${val}`,
           sortable: true,
         },
@@ -198,19 +232,77 @@ export default {
           sortable: true,
         },
       ],
+      featureModelName: null,
+      NF: null,
+      NM: null,
+      NTop: null,
+      NLeaf: null,
+      DTMax: null,
+      CogC: null,
+      FoC: null,
+      SCDF: null,
+      RDen: null,
     };
   },
 
   computed: {
     ...mapGetters('sample', ['samples']),
+
+    formIsInvalid() {
+      const isEmpty = (value) => value == null || value.length === 0;
+      const isNonNegative = (value) => parseInt(value, 10) >= 0;
+      const numericFields = [
+        this.NF,
+        this.NM,
+        this.NTop,
+        this.NLeaf,
+        this.DTMax,
+        this.CogC,
+        this.FoC,
+        this.SCDF,
+        this.RDen,
+      ];
+
+      return isEmpty(this.featureModelName) || numericFields
+        .map((value) => isNonNegative(value))
+        .some((value) => !value);
+    },
   },
 
   methods: {
-    ...mapActions('sample', ['clearSamples', 'importSamples']),
+    ...mapActions('sample', ['clearSamples', 'importSamples', 'evaluateSamples']),
+
+    doClear() {
+      this.clearSamples();
+    },
+
+    doEvaluate() {
+      this.evaluateSamples();
+    },
 
     doImport() {
-      this.clearSamples();
-      this.importSamples(this.text);
+      this.importSamples({
+        name: this.featureModelName,
+        NF: this.NF,
+        NM: this.NM,
+        NTop: this.NTop,
+        NLeaf: this.NLeaf,
+        DTMax: this.DTMax,
+        CogC: this.CogC,
+        FoC: this.FoC,
+        SCDF: this.SCDF,
+        RDen: this.RDen,
+      });
+      this.featureModelName = null;
+      this.NF = null;
+      this.NM = null;
+      this.NTop = null;
+      this.NLeaf = null;
+      this.DTMax = null;
+      this.CogC = null;
+      this.FoC = null;
+      this.SCDF = null;
+      this.RDen = null;
     },
   },
 };
