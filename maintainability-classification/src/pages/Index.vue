@@ -72,11 +72,6 @@
         </div>
         <div class="flex justify-end full-width q-mt-md">
           <q-btn
-            label="Clear"
-            class="q-mr-sm"
-            @click="doClear"
-          />
-          <q-btn
             color="primary"
             label="Import"
             :disable="formIsInvalid"
@@ -107,11 +102,18 @@
                       clickable
                       v-ripple
                     >
-                      <q-item-section>
-                        Make
-                        {{
-                          `${suggestion.feature} ${suggestion.comparator} ${suggestion.threshold}`
-                        }}
+                      <q-item-section class="q-py-sm">
+                        <q-item-label class="text-weight-bold">
+                          Make
+                          {{
+                            `${suggestion.feature} ${suggestion.comparator} ${suggestion.threshold}`
+                          }}
+                        </q-item-label>
+                        <q-item-label>
+                          <q-banner rounded class="bg-primary text-white q-mt-sm">
+                            {{ tips[suggestion.feature][suggestion.comparator] }}
+                          </q-banner>
+                        </q-item-label>
                       </q-item-section>
                     </q-item>
                   </q-list>
@@ -123,6 +125,11 @@
         </q-table>
       </div>
       <div class="col-8 offset-2 q-mt-md flex justify-end">
+        <q-btn
+            label="Clear"
+            class="q-mr-sm"
+            @click="doClear"
+          />
         <q-btn
             color="primary"
             label="Evaluate"
@@ -242,6 +249,44 @@ export default {
       FoC: null,
       SCDF: null,
       RDen: null,
+      tips: {
+        NF: {
+          '>': 'Increase the number of features (hint: divide very broad features into smaller features)',
+          '<=': 'Decrease the number of features (hint: add very small features into larger features)',
+        },
+        NM: {
+          '>': 'Increase the number of mandatory features (hint: check if there are any optional features that should be mandatory)',
+          '<=': 'Decrease the number of mandatory features (hint: check if there are any mandatory features that should be optional)',
+        },
+        NTop: {
+          '>': 'Restructure the feature model so that the number of features that descend directly from the root of the tree increases',
+          '<=': 'Restructure the feature model so that the number of features that descend directly from the root of the tree decreases',
+        },
+        NLeaf: {
+          '>': 'Restructure the feature model so that the number of features in the last level of the tree increases',
+          '<=': 'Restructure the feature model so that the number of features in the last level of the tree decreases',
+        },
+        DTMax: {
+          '>': 'Restructure the feature model so that the number of levels in the tree increases',
+          '<=': 'Restructure the feature model so that the number of levels in the tree decreases',
+        },
+        CogC: {
+          '>': 'Increase the number of Or or XOr type groupings',
+          '<=': 'Decrease the number of Or or XOr type groupings',
+        },
+        FoC: {
+          '>': 'Increase the number of optional features (hint: check if there are any mandatory features that should be optional) or decrease the number of features (hint: add very small features into larger features)',
+          '<=': 'Decrease the number of optional features (hint: check if there are any optional features that should be mandatory) or increase the number of features (hint: divide very comprehensive features into smaller features)',
+        },
+        SCDF: {
+          '>': 'Restructure the feature model so that the number of features that are children of XOr type groupings increases',
+          '<=': 'Restructure the feature model so that the number of features that are children of groupings of type XOr decreases',
+        },
+        RDen: {
+          '>': 'Increase the number of features referenced in constraints',
+          '<=': 'Decrease the number of features referenced in constraints',
+        },
+      },
     };
   },
 
