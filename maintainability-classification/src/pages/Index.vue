@@ -73,9 +73,9 @@
         <div class="flex justify-end full-width q-mt-md">
           <q-btn
             color="primary"
-            label="Import"
+            label="Add"
             :disable="formIsInvalid"
-            @click="doImport"
+            @click="doAdd"
           />
         </div>
       </div>
@@ -325,7 +325,7 @@ export default {
       this.evaluateSamples();
     },
 
-    doImport() {
+    doAdd() {
       this.importSamples({
         name: this.featureModelName,
         NF: this.NF,
